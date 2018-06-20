@@ -2,6 +2,7 @@ package test.common.dao;
 
 import java.util.List;
 
+//깃 이그노어에 .class도 해야해
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.mybatis.spring.SqlSessionTemplate;
