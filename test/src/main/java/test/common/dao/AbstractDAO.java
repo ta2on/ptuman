@@ -2,7 +2,7 @@ package test.common.dao;
 
 import java.util.List;
 
-//±ê ÀÌ±×³ë¾î¿¡ .classµµ ÇØ¾ßÇØ
+//í´ë˜ìŠ¤ì¶”ê°€
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -56,6 +56,9 @@ public class AbstractDAO {
         printQueryId(queryId);
         return sqlSession.selectList(queryId,params);
     }
+    
+    
+    
 }
 
 
