@@ -41,6 +41,13 @@ public class SampleServiceImpl implements SampleService{
 		
 	}
 
+	@Override
+	public void deleteBoard(Map<String, Object> map) throws Exception {
+		// TODO Auto-generated method stub
+		sampleDAO.deleteBoard(map);
+		
+	}
+
  
 }
 

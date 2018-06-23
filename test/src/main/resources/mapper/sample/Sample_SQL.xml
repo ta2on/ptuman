@@ -18,7 +18,8 @@
         ]]>
 	</select>
 
-	<select id="selectBoardDetail" parameterType="hashmap" resultType="hashmap">
+	<select id="selectBoardDetail" parameterType="hashmap"
+		resultType="hashmap">
      <![CDATA[
 		 SELECT
             IDX
@@ -83,6 +84,14 @@
 	</update>
 
 
-
+	<update id="deleteBoard" parameterType="hashmap">
+	<![CDATA[
+		UPDATE TB_BOARD
+		SET
+            DEL_GB = 'Y'
+		WHERE 
+			IDX = #{IDX}
+	]]>
+	</update>
 </mapper>
 

@@ -60,7 +60,7 @@ public class SampleController {
 
 	@RequestMapping(value = "/sample/openBoardUpdate.do")
 	public ModelAndView openBoardUpdate(CommandMap commandMap) throws Exception {
-		ModelAndView mv = new ModelAndView("/sample/boardUpdate");
+		ModelAndView mv = new ModelAndView("jsp/sample/boardUpdate");
 
 		Map<String, Object> map = sampleService.selectBoardDetail(commandMap.getMap());
 		mv.addObject("map", map);
@@ -70,7 +70,7 @@ public class SampleController {
 
 	@RequestMapping(value = "/sample/updateBoard.do")
 	public ModelAndView updateBoard(CommandMap commandMap) throws Exception {
-		ModelAndView mv = new ModelAndView("redirect:/sample/openBoardDetail.do");
+		ModelAndView mv = new ModelAndView("redirect:openBoardDetail.do");
 
 		sampleService.updateBoard(commandMap.getMap());
 
@@ -92,6 +92,16 @@ public class SampleController {
 	    }
 	    return mv;
 	}
+
+	@RequestMapping(value="/sample/deleteBoard.do")
+	public ModelAndView deleteBoard(CommandMap commandMap) throws Exception{
+	    ModelAndView mv = new ModelAndView("redirect:/sample/openBoardList.do");
+	     
+	    sampleService.deleteBoard(commandMap.getMap());
+	     
+	    return mv;
+	}
+
 
 
 }
