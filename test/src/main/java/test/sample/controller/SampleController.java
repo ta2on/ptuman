@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
@@ -49,13 +50,14 @@ public class SampleController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/sample/insertBoard.do")
-	public ModelAndView insertBoard(CommandMap commandMap) throws Exception {
-		ModelAndView mv = new ModelAndView("redirect:/sample/openBoardList.do");
 
-		sampleService.insertBoard(commandMap.getMap());
-
-		return mv;
+	@RequestMapping(value="/sample/insertBoard.do")
+	public ModelAndView insertBoard(CommandMap commandMap, HttpServletRequest request) throws Exception{
+	    ModelAndView mv = new ModelAndView("redirect:/sample/openBoardList.do");
+	     
+	    sampleService.insertBoard(commandMap.getMap(), request);
+	     
+	    return mv;
 	}
 
 	@RequestMapping(value = "/sample/openBoardUpdate.do")
